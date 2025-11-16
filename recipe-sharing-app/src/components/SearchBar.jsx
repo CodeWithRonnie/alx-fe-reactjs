@@ -8,7 +8,6 @@ const SearchBar = () => {
       type="text"
       placeholder="Search recipes..."
       onChange={(e) => setSearchTerm(e.target.value)}
-      style={{ width: "100%", marginBottom: "20px", padding: "10px" }}
     />
   );
 };

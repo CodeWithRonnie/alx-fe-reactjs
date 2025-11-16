@@ -1,7 +1,11 @@
-import { useRecipeStore } from './recipeStore';
+import { useRecipeStore } from "./recipeStore";
 
 const RecipeList = () => {
-  const recipes = useRecipeStore((state) => state.recipes);
+  const recipes = useRecipeStore((state) =>
+    state.recipes.filter((recipe) =>
+      recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+    )
+  );
 
   return (
     <div>

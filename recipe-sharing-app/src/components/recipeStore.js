@@ -1,12 +1,10 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export const useRecipeStore = create((set) => ({
   recipes: [],
 
   addRecipe: (newRecipe) =>
-    set((state) => ({
-      recipes: [...state.recipes, newRecipe],
-    })),
+    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
 
   updateRecipe: (updatedRecipe) =>
     set((state) => ({
@@ -19,4 +17,8 @@ export const useRecipeStore = create((set) => ({
     set((state) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== id),
     })),
+
+  // ✅ Added for Task 2
+  searchTerm: "",
+  setSearchTerm: (term) => set({ searchTerm: term }),
 }));
