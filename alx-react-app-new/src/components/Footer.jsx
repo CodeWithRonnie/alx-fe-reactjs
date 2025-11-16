@@ -10,7 +10,7 @@ const Footer = () => {
         borderTop: "2px solid white",
       }}
     >
-      <p>&copy; 2025 My Favorite Cities. All rights reserved.</p>
+      <p>© 2025 My Favorite Cities. All rights reserved.</p>
     </footer>
   );
 };

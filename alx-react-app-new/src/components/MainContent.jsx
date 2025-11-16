@@ -10,10 +10,9 @@ const MainContent = () => {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <h2 style={{ color: "#005580" }}>Welcome to the City Guide</h2>
+      <h2 style={{ color: "#005580" }}>My Travel Favorites</h2>
       <p style={{ lineHeight: "1.6", color: "#333" }}>
-        Explore the most beautiful cities in the world. Get tips on food, culture, and must-visit
-        attractions. Enjoy your travel experience!
+        I love to visit New York, Paris, and Tokyo.
       </p>
     </main>
   );
