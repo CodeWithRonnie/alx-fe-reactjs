@@ -1,10 +1,20 @@
-import { create } from 'zustand';
+import { useParams } from 'react-router-dom';
+import useRecipeStore from './recipeStore';
 
-const useRecipeStore = create((set) => ({
-  recipes: [],
-  addRecipe: (newRecipe) =>
-    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
-  setRecipes: (recipes) => set({ recipes }),
-}));
+const RecipeDetail = () => {
+  const { id } = useParams();
+  const recipes = useRecipeStore((state) => state.recipes);
 
-export default useRecipeStore;
+  const recipe = recipes.find((r) => r.id === Number(id));
+
+  if (!recipe) return <p>Recipe not found.</p>;
+
+  return (
+    <div>
+      <h2>{recipe.title}</h2>
+      <p>{recipe.description}</p>
+    </div>
+  );
+};
+
+export default RecipeDetail;
