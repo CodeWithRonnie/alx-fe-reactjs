@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import useRecipeStore from './recipeStore';
+import { useRecipeStore } from './recipeStore';
 
 const DeleteRecipeButton = () => {
   const { id } = useParams();
