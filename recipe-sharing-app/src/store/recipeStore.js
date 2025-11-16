@@ -17,4 +17,18 @@ export const useRecipeStore = create((set) => ({
         recipe.id === id ? { ...recipe, ...updatedData } : recipe
       ),
     })),
+
+  // 🔍 NEW: Search & Filtering
+  searchTerm: "",
+  filteredRecipes: [],
+
+  setSearchTerm: (term) =>
+    set((state) => {
+      return {
+        searchTerm: term,
+        filteredRecipes: state.recipes.filter((recipe) =>
+          recipe.title.toLowerCase().includes(term.toLowerCase())
+        ),
+      };
+    }),
 }));
