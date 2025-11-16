@@ -3,11 +3,13 @@ import RecipeList from "./components/RecipeList";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeDetails from "./components/RecipeDetails";
 import SearchBar from "./components/SearchBar";
+import FavoriteButton from "./FavoriteButton";
 
 function App() {
   return (
     <div style={{ width: "600px", margin: "0 auto" }}>
       <h1>Recipe Sharing App</h1>
+      <FavoriteButton recipeId={recipe.id} />
 
       <Routes>
         <Route
