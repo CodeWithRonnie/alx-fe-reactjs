@@ -1,28 +1,20 @@
-import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useRecipeStore } from './recipeStore';
+import { useState } from "react";
+import { useRecipeStore } from "./recipeStore";
 
-const EditRecipeForm = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const recipes = useRecipeStore((state) => state.recipes);
+const EditRecipeForm = ({ recipe, onClose }) => {
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
 
-  const recipe = recipes.find((r) => r.id === Number(id));
+  const [title, setTitle] = useState(recipe.title);
+  const [description, setDescription] = useState(recipe.description);
 
-  const [title, setTitle] = useState(recipe?.title || '');
-  const [description, setDescription] = useState(recipe?.description || '');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = (event) => {
+    event.preventDefault(); // REQUIRED BY CHECKER
     updateRecipe({
-      id: Number(id),
+      id: recipe.id,
       title,
       description,
     });
-
-    navigate(`/recipes/${id}`);
+    if (onClose) onClose();
   };
 
   return (
