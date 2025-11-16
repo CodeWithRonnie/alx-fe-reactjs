@@ -16,7 +16,6 @@ const Navbar = () => {
       <Link to="/contact" style={{ color: "white", textDecoration: "none" }}>Contact</Link>
     </nav>
   );
-  
 };
 
 export default Navbar;
