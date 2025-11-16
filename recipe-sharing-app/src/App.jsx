@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
+import AddRecipeForm from "./components/AddRecipeForm";
 import SearchBar from "./components/SearchBar";
 import RecipeDetail from "./components/RecipeDetail";
 import EditRecipeForm from "./components/EditRecipeForm";
@@ -16,7 +16,7 @@ function App() {
           element={
             <>
               <AddRecipeForm />
-              <SearchBar /> {/* ✅ Added SearchBar */}
+              <SearchBar />
               <RecipeList />
             </>
           }
