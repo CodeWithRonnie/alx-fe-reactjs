@@ -1,3 +1,4 @@
+import "./index.css"; // import Tailwind
 import Search from "./components/Search";
 
 function App() {
