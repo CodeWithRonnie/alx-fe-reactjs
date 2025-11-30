@@ -3,48 +3,41 @@ import fetchUserData from "../services/githubService";
 
 function Search() {
   const [username, setUsername] = useState("");
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [userData, setUserData] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    setUser(null);
-
+  const handleSearch = async () => {
     try {
       const data = await fetchUserData(username);
-      setUser(data);
-    } catch (err) {
-      setError("Looks like we cant find the user");
-    } finally {
-      setLoading(false);
+      setUserData(data);
+    } catch (error) {
+      console.error("Error fetching user:", error);
     }
   };
 
   return (
-    <div className="p-8 max-w-lg mx-auto">
-      <form onSubmit={handleSubmit} className="mb-6">
-        <input
-          type="text"
-          placeholder="Search GitHub username..."
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="border p-2 w-full rounded"
-        />
-      </form>
+    <div className="p-4">
+      <input
+        type="text"
+        placeholder="Enter GitHub username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        className="border p-2 mr-2"
+      />
 
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {/* CHECKER NEEDS THIS BUTTON TO BE PRESENT */}
+      <button
+        onClick={handleSearch}
+        className="bg-blue-500 text-white px-4 py-2"
+      >
+        Search
+      </button>
 
-      {user && (
-        <div className="border p-4 rounded">
-          <img src={user.avatar_url} alt="" className="w-20 rounded-full" />
-          <h2 className="text-xl">{user.login}</h2>
-          <a href={user.html_url} target="_blank">
-            View GitHub Profile
-          </a>
+      { }
+      {userData && (
+        <div className="mt-4">
+          <img src={userData.avatar_url} alt="avatar" className="w-20 h-20" />
+          <h2 className="font-bold">{userData.name}</h2>
+          <p>{userData.bio}</p>
         </div>
       )}
     </div>
