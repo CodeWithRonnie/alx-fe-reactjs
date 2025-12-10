@@ -2,39 +2,17 @@
   {
     "id": 1,
     "title": "Spaghetti Carbonara",
-    "summary": "Classic Italian pasta with eggs, cheese, bacon and black pepper.",
-    "image": "https://via.placeholder.com/600x400?text=Spaghetti+Carbonara",
-    "ingredients": ["Spaghetti", "Eggs", "Parmesan", "Bacon", "Black pepper"],
-    "steps": [
-      "Cook spaghetti until al dente.",
-      "Whisk eggs and cheese together.",
-      "Fry bacon until crisp.",
-      "Toss spaghetti with egg mixture and bacon off the heat."
-    ]
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/600x400",
+    "ingredients": ["200g spaghetti", "100g pancetta", "2 eggs", "50g parmesan", "Black pepper"],
+    "instructions": ["Boil spaghetti", "Fry pancetta", "Mix eggs and cheese", "Combine all ingredients"]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
-    "summary": "Tender grilled chicken in a creamy, spiced tomato sauce.",
-    "image": "https://via.placeholder.com/600x400?text=Chicken+Tikka+Masala",
-    "ingredients": ["Chicken", "Tomato sauce", "Cream", "Garam masala"],
-    "steps": [
-      "Marinate and grill the chicken.",
-      "Prepare the spiced tomato sauce.",
-      "Add cream and simmer.",
-      "Combine chicken with sauce and serve."
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Avocado Toast",
-    "summary": "Quick and healthy: smashed avocado on toasted bread with a squeeze of lemon.",
-    "image": "https://via.placeholder.com/600x400?text=Avocado+Toast",
-    "ingredients": ["Bread", "Avocado", "Lemon", "Salt", "Pepper"],
-    "steps": [
-      "Toast the bread.",
-      "Smash avocado with lemon, salt and pepper.",
-      "Spread avocado on toast and enjoy."
-    ]
+    "summary": "Chunks of grilled chicken cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/600x400",
+    "ingredients": ["500g chicken", "2 tbsp tikka masala", "1 onion", "200ml cream", "Tomatoes"],
+    "instructions": ["Marinate chicken", "Cook onions and spices", "Add chicken", "Add cream and simmer"]
   }
 ]

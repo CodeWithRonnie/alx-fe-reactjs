@@ -40,18 +40,19 @@ export default function RecipeDetail() {
         </div>
       )}
 
-      {recipe.steps && (
-        <div>
-          <h2 className="text-2xl font-semibold mb-2">Preparation Steps</h2>
-          <ol className="list-decimal list-inside text-gray-700">
-            {recipe.steps.map((step, index) => (
-              <li key={index} className="mb-2">
-                {step}
-              </li>
-            ))}
-          </ol>
-        </div>
-      )}
+     {recipe.instructions && (
+  <div>
+    <h2 className="text-2xl font-semibold mb-2">Preparation Steps</h2>
+    <ol className="list-decimal list-inside text-gray-700">
+      {recipe.instructions.map((inst, index) => (
+        <li key={index} className="mb-2">
+          {inst}
+        </li>
+      ))}
+    </ol>
+  </div>
+)}
+
     </div>
   );
 }
