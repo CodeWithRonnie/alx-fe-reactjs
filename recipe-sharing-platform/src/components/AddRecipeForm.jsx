@@ -59,12 +59,14 @@ const AddRecipeForm = () => {
 
         <div>
           <label className="block font-semibold mb-1">Preparation Steps (period separated)</label>
-          <textarea
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
-            className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="e.g., Beat eggs. Mix with flour. Bake at 180C for 30 mins."
-          ></textarea>
+        <textarea
+  name="steps"
+  value={steps}
+  onChange={(e) => setSteps(e.target.value)}
+  className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+  placeholder="e.g. Beat eggs. Mix with flour. Bake for 30 mins."
+></textarea>
+
         </div>
 
         <button
