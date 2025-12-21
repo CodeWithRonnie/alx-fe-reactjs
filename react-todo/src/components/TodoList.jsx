@@ -1,15 +1,15 @@
 import { useState } from "react";
 import AddTodoForm from "./AddTodoForm";
 
-function TodoList() {
+export default function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
     { id: 2, text: "Build a project", completed: true },
   ]);
 
   const addTodo = (text) => {
-    const newTodo = { id: Date.now(), text, completed: false };
-    setTodos([...todos, newTodo]);
+    if (!text) return;
+    setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
 
   const toggleTodo = (id) => {
@@ -39,7 +39,14 @@ function TodoList() {
             }}
           >
             {todo.text}
-            <button onClick={(e) => { e.stopPropagation(); deleteTodo(todo.id); }}>Delete</button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                deleteTodo(todo.id);
+              }}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
@@ -47,4 +54,3 @@ function TodoList() {
   );
 }
 
-export default TodoList;
