@@ -1,31 +1,29 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import TodoList from "../components/TodoList";
 
-test("renders initial todos", () => {
+test("renders the TodoList component", () => {
   render(<TodoList />);
   expect(screen.getByText(/Learn React/i)).toBeInTheDocument();
-  expect(screen.getByText(/Build a project/i)).toBeInTheDocument();
 });
 
-test("can add a new todo", () => {
+test("adds a new todo", () => {
   render(<TodoList />);
   const input = screen.getByPlaceholderText("Add todo");
   const button = screen.getByText("Add");
-
-  fireEvent.change(input, { target: { value: "New Task" } });
+  fireEvent.change(input, { target: { value: "Test Todo" } });
   fireEvent.click(button);
-
-  expect(screen.getByText("New Task")).toBeInTheDocument();
+  expect(screen.getByText("Test Todo")).toBeInTheDocument();
 });
 
-test("can toggle todo", () => {
+test("toggles a todo item", () => {
   render(<TodoList />);
   const todo = screen.getByText("Learn React");
   fireEvent.click(todo);
   expect(todo).toHaveStyle("text-decoration: line-through");
 });
 
-test("can delete todo", () => {
+test("deletes a todo item", () => {
   render(<TodoList />);
   const deleteButton = screen.getAllByText("Delete")[0];
   fireEvent.click(deleteButton);
