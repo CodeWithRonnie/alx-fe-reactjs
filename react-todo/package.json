@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "test": "jest",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -25,3 +26,4 @@
     "vite": "^7.2.4"
   }
 }
+
